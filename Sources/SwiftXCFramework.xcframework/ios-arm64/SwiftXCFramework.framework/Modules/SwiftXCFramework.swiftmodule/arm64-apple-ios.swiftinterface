@@ -1,0 +1,25 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)
+// swift-module-flags: -target arm64-apple-ios15.4 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name SwiftXCFramework
+import Foundation
+import Swift
+@_exported import SwiftXCFramework
+import _Concurrency
+public class Basket {
+  public init(_capacity: Swift.Int)
+  public func add(_ fruit: SwiftXCFramework.Fruit)
+  @objc deinit
+}
+public enum Fruit : Swift.String {
+  case Banana
+  case orange
+  case Apple
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension SwiftXCFramework.Fruit : Swift.Equatable {}
+extension SwiftXCFramework.Fruit : Swift.Hashable {}
+extension SwiftXCFramework.Fruit : Swift.RawRepresentable {}
